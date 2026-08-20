@@ -27,7 +27,6 @@
     -webkit-font-smoothing:antialiased;}
   body{padding-bottom:60px;}
 
-  /* ---------- header / badge ---------- */
   header{
     padding:28px 20px 20px;
     background:
@@ -37,43 +36,26 @@
     border-bottom:1px solid var(--line);
     position:relative;
   }
-  .eyebrow{
-    font-size:11px; letter-spacing:.16em; text-transform:uppercase;
-    color:var(--hot); font-weight:800; margin-bottom:6px;
-  }
-  h1{
-    margin:0; font-size:26px; font-weight:900; letter-spacing:-0.01em; line-height:1.15;
-  }
+  .eyebrow{ font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--hot); font-weight:800; margin-bottom:6px; }
+  h1{ margin:0; font-size:26px; font-weight:900; letter-spacing:-0.01em; line-height:1.15; }
   .sub{color:var(--muted); font-size:13px; margin-top:6px;}
 
-  /* ---------- day tabs ---------- */
   nav.tabs{
     display:flex; gap:8px; padding:14px 16px; position:sticky; top:0; z-index:20;
     background:rgba(18,15,24,0.92); backdrop-filter:blur(8px);
     border-bottom:1px solid var(--line);
   }
-  .tab{
-    flex:1; text-align:center; padding:11px 8px; border-radius:12px;
-    font-weight:800; font-size:14px; letter-spacing:.02em;
-    border:1px solid var(--line); background:var(--surface); color:var(--muted);
-  }
+  .tab{ flex:1; text-align:center; padding:11px 8px; border-radius:12px; font-weight:800; font-size:14px; letter-spacing:.02em; border:1px solid var(--line); background:var(--surface); color:var(--muted); }
   .tab.active{ background:var(--hot); color:#1a0912; border-color:var(--hot); }
 
   main{max-width:640px; margin:0 auto; padding:18px 16px 0;}
   .day{display:none;}
   .day.active{display:block;}
 
-  /* ---------- timeline blocks ---------- */
   .slot{ position:relative; padding-left:22px; margin-bottom:22px; }
-  .slot::before{
-    content:""; position:absolute; left:6px; top:6px; bottom:-22px; width:2px;
-    background:var(--line);
-  }
+  .slot::before{ content:""; position:absolute; left:6px; top:6px; bottom:-22px; width:2px; background:var(--line); }
   .slot:last-child::before{ display:none; }
-  .slot::after{
-    content:""; position:absolute; left:2px; top:4px; width:10px; height:10px;
-    border-radius:50%; background:var(--muted); border:2px solid var(--ink);
-  }
+  .slot::after{ content:""; position:absolute; left:2px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--muted); border:2px solid var(--ink); }
   .slot.fixed::after{ background:var(--fixed); }
   .slot.hot::after{ background:var(--hot); }
 
@@ -81,73 +63,40 @@
   .slot.fixed .time{ color:var(--fixed); }
   .slot.hot .time{ color:var(--hot); }
 
-  /* fixed event = ticket-stub card */
-  .ticket{
-    background:linear-gradient(135deg, var(--fixed-dim), var(--surface));
-    border:1px solid var(--fixed); border-radius:14px; padding:14px 16px;
-    position:relative; overflow:hidden;
-  }
-  .ticket::before, .ticket::after{
-    content:""; position:absolute; width:16px; height:16px; background:var(--ink);
-    border-radius:50%; top:50%; transform:translateY(-50%);
-  }
+  .ticket{ background:linear-gradient(135deg, var(--fixed-dim), var(--surface)); border:1px solid var(--fixed); border-radius:14px; padding:14px 16px; position:relative; overflow:hidden; }
+  .ticket::before, .ticket::after{ content:""; position:absolute; width:16px; height:16px; background:var(--ink); border-radius:50%; top:50%; transform:translateY(-50%); }
   .ticket::before{ left:-9px; } .ticket::after{ right:-9px; }
   .ticket .name{ font-weight:800; font-size:15.5px; margin-bottom:4px; }
   .ticket .loc{ font-size:12.5px; color:#C9C1E0; }
-  .ticket .flag{ display:inline-block; margin-top:8px; font-size:11.5px; font-weight:700;
-    background:rgba(255,183,74,0.15); color:var(--gold); padding:3px 8px; border-radius:20px; }
+  .ticket .flag{ display:inline-block; margin-top:8px; font-size:11.5px; font-weight:700; background:rgba(255,183,74,0.15); color:var(--gold); padding:3px 8px; border-radius:20px; }
 
-  /* card list */
-  .card{
-    background:var(--surface); border:1px solid var(--line); border-radius:14px;
-    padding:12px 14px; margin-bottom:10px; display:flex; gap:12px; align-items:flex-start;
-  }
-  .card input[type=checkbox]{
-    appearance:none; -webkit-appearance:none; width:22px; height:22px; min-width:22px;
-    border-radius:7px; border:2px solid var(--line); background:var(--surface-2);
-    margin-top:2px; position:relative; cursor:pointer;
-  }
+  .card{ background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:12px 14px; margin-bottom:10px; display:flex; gap:12px; align-items:flex-start; }
+  .card input[type=checkbox]{ appearance:none; -webkit-appearance:none; width:22px; height:22px; min-width:22px; border-radius:7px; border:2px solid var(--line); background:var(--surface-2); margin-top:2px; position:relative; cursor:pointer; }
   .card input[type=checkbox]:checked{ background:var(--hot); border-color:var(--hot); }
-  .card input[type=checkbox]:checked::after{
-    content:"✓"; position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
-    font-size:14px; color:#1a0912; font-weight:900;
-  }
+  .card input[type=checkbox]:checked::after{ content:"✓"; position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:14px; color:#1a0912; font-weight:900; }
   .card label{ flex:1; }
   .card .item-name{ font-weight:700; font-size:14.5px; }
   .card .item-name.checked{ text-decoration:line-through; color:var(--muted); }
   .card .item-meta{ font-size:12px; color:var(--muted); margin-top:2px; }
-  .chip{ display:inline-block; font-size:10.5px; font-weight:800; letter-spacing:.03em;
-    padding:2px 7px; border-radius:20px; margin-top:6px; }
+  .chip{ display:inline-block; font-size:10.5px; font-weight:800; letter-spacing:.03em; padding:2px 7px; border-radius:20px; margin-top:6px; }
   .chip.hot{ background:var(--hot-dim); color:var(--hot); }
   .chip.gold{ background:var(--gold-dim); color:var(--gold); }
   .chip.cyan{ background:var(--cyan-dim); color:var(--cyan); }
 
-  h2.block-title{ font-size:13px; text-transform:uppercase; letter-spacing:.08em; color:var(--text);
-    margin:0 0 10px; font-weight:800; }
+  h2.block-title{ font-size:13px; text-transform:uppercase; letter-spacing:.08em; color:var(--text); margin:0 0 10px; font-weight:800; }
   .block-note{ font-size:12px; color:var(--muted); margin:-4px 0 12px; line-height:1.5; }
 
-  /* legend */
   .legend{ display:flex; flex-wrap:wrap; gap:8px; margin:4px 0 20px; }
   .legend span{ font-size:11px; padding:4px 9px; border-radius:20px; border:1px solid var(--line); color:var(--muted); }
 
-  /* alley route list */
   .route{ list-style:none; margin:0; padding:0; }
-  .route li{
-    display:flex; gap:10px; align-items:center; padding:9px 0; border-bottom:1px solid var(--line);
-    font-size:14px;
-  }
+  .route li{ display:flex; gap:10px; align-items:center; padding:9px 0; border-bottom:1px solid var(--line); font-size:14px; }
   .route li:last-child{ border-bottom:none; }
-  .booth-code{
-    font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-weight:800; font-size:12.5px;
-    background:var(--surface-2); color:var(--cyan); padding:3px 7px; border-radius:6px; min-width:52px; text-align:center;
-  }
+  .booth-code{ font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-weight:800; font-size:12.5px; background:var(--surface-2); color:var(--cyan); padding:3px 7px; border-radius:6px; min-width:52px; text-align:center; }
   .route li .rname{ flex:1; }
   .route li .rmeta{ color:var(--muted); font-size:11.5px; }
 
-  .callout{
-    background:var(--surface-2); border:1px dashed var(--line); border-radius:12px;
-    padding:12px 14px; font-size:12.5px; color:#D9D3E6; line-height:1.55; margin-bottom:16px;
-  }
+  .callout{ background:var(--surface-2); border:1px dashed var(--line); border-radius:12px; padding:12px 14px; font-size:12.5px; color:#D9D3E6; line-height:1.55; margin-bottom:16px; }
   .callout b{ color:var(--gold); }
 
   section{ margin-bottom:28px; }
@@ -159,7 +108,7 @@
 <header>
   <div class="eyebrow">AnimeNYC · Fri Aug 21 – Sat Aug 22</div>
   <h1>Your Weekend Route</h1>
-  <div class="sub">Tap the tabs below. Checkboxes stay ticked while this page is open — saved locally on your device, works with no signal on the floor.</div>
+  <div class="sub">Tap the tabs below. Checkboxes stay ticked while this page stays open — no signal needed, works fully offline.</div>
 </header>
 
 <nav class="tabs">
@@ -170,9 +119,9 @@
 <main>
 
 <div class="legend">
-  <span>🟣 fixed = scheduled event, don't miss</span>
-  <span>🔴 hot = beat-the-line priority</span>
-  <span>🟡 gold = high interest / limited</span>
+  <span>🟣 fixed = scheduled event</span>
+  <span>🔴 hot = do it now / sell-out risk</span>
+  <span>🟡 gold = high interest, less urgent</span>
   <span>🟢 cyan = artist alley</span>
 </div>
 
@@ -181,20 +130,20 @@
 
   <section>
   <div class="slot hot">
-    <div class="time">Doors Open → 1:30 PM · PRIORITY SWEEP</div>
-    <div class="block-note">Hit these first — limited items and freebies that dry up early. Route: exclusive pin → Jiuge → Emi Lo (Hall 1C) → TCG freebies → Sony Music → KYOUKARAA. (Sarah Natochenney only signs Saturday — she's in that day's plan.)</div>
-
-    <div class="card"><input type="checkbox" id="f1"><label for="f1"><span class="item-name">Jiuge Illustration / Fan Yang</span><div class="item-meta">Artist Alley Z-05 — limited comic prints, you flagged "NEED"</div><span class="chip hot">Do first — limited</span></label></div>
+    <div class="time">Doors Open → 1:30 PM · URGENT GRAB</div>
+    <div class="block-note">Non-negotiable first stops — logistics you can't push back, plus the most limited items on the floor.</div>
 
     <div class="card"><input type="checkbox" id="f2"><label for="f2"><span class="item-name">Exclusive pin pickup</span><div class="item-meta">Booth #411</div><span class="chip hot">Beat the line</span></label></div>
 
-    <div class="card"><input type="checkbox" id="f3"><label for="f3"><span class="item-name">Emi Lo autograph</span><div class="item-meta">MaoMao & Lucy — Hall 1C, signing all 4 days: Fri 10am–7pm. Long window, so no rush, just mind the crowd.</div><span class="chip hot">Beat the line</span></label></div>
+    <div class="card"><input type="checkbox" id="f6"><label for="f6"><span class="item-name">KYOUKARAA preorder pickup</span><div class="item-meta">Artist Alley I-15 — bring your invoice</div><span class="chip hot">Time-sensitive pickup</span></label></div>
 
-    <div class="card"><input type="checkbox" id="f5"><label for="f5"><span class="item-name">One Piece TCG freebies</span><div class="item-meta">Booth #832 — check X for today's drop time</div><span class="chip hot">Freebies, limited</span></label></div>
+    <div class="card"><input type="checkbox" id="f1"><label for="f1"><span class="item-name">Jiuge Illustration / Fan Yang</span><div class="item-meta">Artist Alley Z-05 — limited comic prints, you flagged "NEED"</div><span class="chip hot">Limited — do first</span></label></div>
 
-    <div class="card"><input type="checkbox" id="f6"><label for="f6"><span class="item-name">KYOUKARAA preorder pickup</span><div class="item-meta">Artist Alley I-15 — bring your invoice</div><span class="chip hot">Bring invoice</span></label></div>
+    <div class="card"><input type="checkbox" id="f9"><label for="f9"><span class="item-name">One Piece TCG</span><div class="item-meta">Booth #832 — grab the deck now; also check X for today's freebie drop time</div><span class="chip hot">Deck sell-out risk</span></label></div>
 
-    <div class="card"><input type="checkbox" id="f7"><label for="f7"><span class="item-name">Sony Music Japan Booth</span><div class="item-meta">Booth #341 — buy yama merch here Thu/Fri to get a signing ticket. Or skip this stop and grab a ticket from the merch table outside Main Stage right after tonight's concert instead. Signing location is private, revealed to ticket holders.</div><span class="chip gold">Optional</span></label></div>
+    <div class="card"><input type="checkbox" id="f3"><label for="f3"><span class="item-name">Emi Lo autograph</span><div class="item-meta">MaoMao & Lucy — Hall 1C, signing all 4 days incl. Sat, so no rush. Grab here if convenient, otherwise Saturday works too.</div><span class="chip gold">Flexible</span></label></div>
+
+    <div class="card"><input type="checkbox" id="f7"><label for="f7"><span class="item-name">Sony Music Japan Booth</span><div class="item-meta">Booth #341 — buy yama merch here Thu/Fri for a signing ticket, or skip and grab one from the merch table outside Main Stage right after tonight's concert instead</div><span class="chip gold">Optional</span></label></div>
   </div>
   </section>
 
@@ -221,19 +170,21 @@
 
   <section>
   <div class="slot">
-    <div class="time">3:45 – 5:15 PM · EXHIBIT HALL SWEEP</div>
-    <div class="block-note">Numbered-booth vendors, roughly grouped so you're not zig-zagging. (The Mokochan print + signature moved to Saturday — see that tab for the confirmed 2pm slot.)</div>
+    <div class="time">3:45 – 5:15 PM · EXHIBIT EXCLUSIVES SWEEP</div>
+    <div class="block-note">Ordered to match your exclusives ranking while roughly following the floor's numbering (a decent proxy for physical layout, since I don't have the real map). If time runs short, skip the low-priority detours below before you'd skip ZZZ or Crunchyroll.</div>
 
-    <div class="card"><input type="checkbox" id="f8"><label for="f8"><span class="item-name">Kinokuniya</span><div class="item-meta">Booth #321</div></label></div>
-    <div class="card"><input type="checkbox" id="f9"><label for="f9"><span class="item-name">Atlassian × Williams F1 × Dandadan</span><div class="item-meta">Check map for booth #</div></label></div>
-    <div class="card"><input type="checkbox" id="f10"><label for="f10"><span class="item-name">GoodSmile</span><div class="item-meta">Booth #521</div></label></div>
-    <div class="card"><input type="checkbox" id="f11"><label for="f11"><span class="item-name">Crunchyroll</span><div class="item-meta">Booth #1325</div></label></div>
-    <div class="card"><input type="checkbox" id="f12"><label for="f12"><span class="item-name">Viz</span><div class="item-meta">Booth #621</div></label></div>
-    <div class="card"><input type="checkbox" id="f13"><label for="f13"><span class="item-name">ZZZ</span><div class="item-meta">Booth #2019 — check for Anby, Miyabi, Alice, Seed</div></label></div>
+    <div class="card"><input type="checkbox" id="f8"><label for="f8"><span class="item-name">Kinokuniya</span><div class="item-meta">Booth #321 — Witch Hat Atelier con exclusives</div><span class="chip hot">#1 priority</span></label></div>
+    <div class="card"><input type="checkbox" id="f10"><label for="f10"><span class="item-name">GoodSmile</span><div class="item-meta">Booth #521 — Miku nendoroids, incl. Miku Expo 2025</div><span class="chip hot">#4 priority</span></label></div>
+    <div class="card"><input type="checkbox" id="f18b"><label for="f18b"><span class="item-name">JeanaDraws Gacha</span><div class="item-meta">Booth #567 — on the way between GoodSmile and Viz, low-cost detour</div></label></div>
+    <div class="card"><input type="checkbox" id="f12"><label for="f12"><span class="item-name">Viz</span><div class="item-meta">Booth #621</div><span class="chip hot">#7 priority</span></label></div>
+    <div class="card"><input type="checkbox" id="fatl"><label for="fatl"><span class="item-name">Atlassian × Williams F1 × Dandadan</span><div class="item-meta">Booth # unconfirmed — check the app map; slot in wherever it falls along this route</div><span class="chip hot">#3 priority</span></label></div>
+    <div class="card"><input type="checkbox" id="f11"><label for="f11"><span class="item-name">Crunchyroll</span><div class="item-meta">Booth #1325</div><span class="chip hot">#5 priority</span></label></div>
+    <div class="card"><input type="checkbox" id="f13"><label for="f13"><span class="item-name">ZZZ</span><div class="item-meta">Booth #2019 — check for Anby, Miyabi, Alice, Seed</div><span class="chip hot">#2 priority</span></label></div>
+
+    <div class="callout"><b>If time allows only:</b> Kadokawa (#1701), Akiba Anime Store (#1743), An-Nippon Anime × Kogei (#2104) sit near ZZZ on this same walk — swing by if you're not rushed, otherwise skip, they're not on your exclusives list.</div>
     <div class="card"><input type="checkbox" id="f14"><label for="f14"><span class="item-name">Kadokawa</span><div class="item-meta">Booth #1701</div></label></div>
     <div class="card"><input type="checkbox" id="f16"><label for="f16"><span class="item-name">Akiba Anime Store</span><div class="item-meta">Booth #1743</div></label></div>
     <div class="card"><input type="checkbox" id="f17"><label for="f17"><span class="item-name">An-Nippon Anime × Kogei</span><div class="item-meta">Booth #2104</div></label></div>
-    <div class="card"><input type="checkbox" id="f18"><label for="f18"><span class="item-name">JeanaDraws Gacha</span><div class="item-meta">Booth #567</div></label></div>
   </div>
   </section>
 
@@ -249,10 +200,18 @@
   </section>
 
   <section>
-  <div class="slot">
-    <div class="time">6:15 PM → Close</div>
-    <div class="block-note">Floor's winding down — this is slack time. Mop up anything from the priority sweep you missed, or start the Bushiroad booth (location TBD — check the app) if it's still open. The full Artist Alley pass is Saturday afternoon, when you'll have more time.</div>
-    <div class="card"><input type="checkbox" id="f19"><label for="f19"><span class="item-name">Bushiroad</span><div class="item-meta">Booth TBD — check app for location</div></label></div>
+  <div class="slot hot">
+    <div class="time">6:15 PM → Close · ARTIST ALLEY, HIGH-DEMAND PASS</div>
+    <div class="block-note">These are the artists tied to franchises with big, fast-buying fanbases right now — Persona, Baldur's Gate 3, Chainsaw Man, Dungeon Meshi, and Vocaloid/Miku all move fast at cons. That's a real signal for these; for the rest of your list I don't have reliable data on individual sell-through, so I've left them for the calmer Saturday-afternoon block. Route below is sorted by row so it's one walk, not a zigzag. If the floor closes before you finish, carry whatever's left into Saturday morning — better than pushing it to the afternoon.</div>
+
+    <div class="card"><input type="checkbox" id="fb20"><label for="fb20"><span class="item-name">CourtneyWirthit</span><div class="item-meta">B-20 — PERSONA. Persona's collector fanbase clears prints fast.</div><span class="chip hot">High demand</span></label></div>
+    <div class="card"><input type="checkbox" id="fc28"><label for="fc28"><span class="item-name">NekoPunch / Musan</span><div class="item-meta">C-28 — Dungeon Meshi & FF7 (also listed as Booth #2743). Dungeon Meshi is having a huge moment right now.</div><span class="chip hot">High demand</span></label></div>
+    <div class="card"><input type="checkbox" id="fk07"><label for="fk07"><span class="item-name">(unnamed artist)</span><div class="item-meta">K-07 — has Shadowheart pieces, same BG3 crowd as Sarah MW Miller below</div><span class="chip hot">High demand</span></label></div>
+    <div class="card"><input type="checkbox" id="fo19"><label for="fo19"><span class="item-name">Sarah MW Miller</span><div class="item-meta">O-19 — BG3, especially Shadowheart. Popular fandom, and you called this one out specifically.</div><span class="chip hot">High demand</span></label></div>
+    <div class="card"><input type="checkbox" id="fs14"><label for="fs14"><span class="item-name">YUKINNNNNNN</span><div class="item-meta">S-14 — Chainsaw Man & FF7 posters, two of the hottest fandoms on the floor right now</div><span class="chip hot">High demand</span></label></div>
+    <div class="card"><input type="checkbox" id="fs23"><label for="fs23"><span class="item-name">poxei</span><div class="item-meta">S-23 — PERSONA + risograph, same Persona-cluster risk</div><span class="chip hot">High demand</span></label></div>
+    <div class="card"><input type="checkbox" id="fz09"><label for="fz09"><span class="item-name">carmily</span><div class="item-meta">Z-09 — PERSONA, same cluster</div><span class="chip hot">High demand</span></label></div>
+    <div class="card"><input type="checkbox" id="fz20"><label for="fz20"><span class="item-name">goldfishu</span><div class="item-meta">Z-20 — Miku/Teto + DanDaDan. Vocaloid collectors buy fast, and DanDaDan's trending hard too.</div><span class="chip hot">High demand</span></label></div>
   </div>
   </section>
 
@@ -264,8 +223,8 @@
   <section>
   <div class="slot hot">
     <div class="time">Doors Open → 10:45 AM</div>
-    <div class="block-note">Backup window for anything unfinished Friday — autographs, Sony Music, TCG freebies, Bushiroad.</div>
-    <div class="card"><input type="checkbox" id="s1"><label for="s1"><span class="item-name">Finish Friday priority sweep</span><div class="item-meta">Autographs / Sony Music / TCG freebies, if still needed</div></label></div>
+    <div class="block-note">Finish anything unchecked from Friday evening's high-demand artist pass first — this is your last shot before those prints run out. Emi Lo (Hall 1C, 10am–7pm today) is also fair game here if you skipped her Friday.</div>
+    <div class="card"><input type="checkbox" id="s1"><label for="s1"><span class="item-name">Wrap up Friday's high-demand artist pass</span><div class="item-meta">Whatever's still unchecked from the Friday-evening list</div></label></div>
   </div>
   </section>
 
@@ -285,7 +244,7 @@
     <div class="time">11:30 AM – 12:30 PM</div>
     <div class="block-note">Buy the print here rather than after the panel — it's "while supplies last," and this guarantees your entry ticket for the 2pm signing.</div>
     <div class="card"><input type="checkbox" id="s2b"><label for="s2b"><span class="item-name">Buy Ghost in the Shell Framed Memorial Art Print</span><div class="item-meta">Bandai Namco Filmworks Booth #820 — entry ticket for the 2pm Mokochan signing is given at purchase. Max 2 tickets per title per person (1 per transaction — go to back of line to buy a 2nd).</div><span class="chip hot">Buy early — limited supply</span></label></div>
-    <div class="card"><input type="checkbox" id="s2"><label for="s2"><span class="item-name">Any exhibit-hall leftovers from Friday</span><div class="item-meta">Quick grab-and-go only</div></label></div>
+    <div class="card"><input type="checkbox" id="s2"><label for="s2"><span class="item-name">Any leftover exhibit-hall stops</span><div class="item-meta">Quick grab-and-go only</div></label></div>
   </div>
   </section>
 
@@ -312,38 +271,28 @@
 
   <section>
   <div class="slot">
-    <div class="time">2:00 PM → Close · ARTIST ALLEY SWEEP</div>
-    <div class="block-note">This is your big block — the rest of the weekend's real estate. List below is sorted by booth row so you walk it once, not back-and-forth. PERSONA cluster (carmily, poxei, CourtneyWirthit) and the Sarah MW Miller (BG3/Shadowheart) + K-07 (also Shadowheart) stops are worth grouping together since they're thematically close for you.</div>
+    <div class="time">2:00 PM → Close · ARTIST ALLEY, REST OF THE LIST</div>
+    <div class="block-note">Everyone else on your list — no specific sell-out signal on these, so this is your relaxed sweep. Sorted by row for one clean walk.</div>
 
     <ul class="route">
       <li><span class="booth-code">AA-26</span><span class="rname">Syertse</span></li>
       <li><span class="booth-code">AB-02</span><span class="rname">The Good Bunny Club</span></li>
-      <li><span class="booth-code">B-20</span><span class="rname">CourtneyWirthit</span><span class="rmeta">PERSONA</span></li>
-      <li><span class="booth-code">C-28</span><span class="rname">NekoPunch / Musan</span><span class="rmeta">Dungeon Meshi, FF7 (also #2743)</span></li>
       <li><span class="booth-code">E-28</span><span class="rname">Litarnes</span></li>
       <li><span class="booth-code">H-14</span><span class="rname">Jensen Wake</span></li>
-      <li><span class="booth-code">K-07</span><span class="rname">(unnamed)</span><span class="rmeta">has Shadowheart</span></li>
       <li><span class="booth-code">N-16</span><span class="rname">ElusiveLisa</span></li>
       <li><span class="booth-code">O-03</span><span class="rname">itsmandymo</span></li>
-      <li><span class="booth-code">O-19</span><span class="rname">Sarah MW Miller</span><span class="rmeta">BG3 — Shadowheart</span></li>
       <li><span class="booth-code">O-20</span><span class="rname">Celtis</span></li>
       <li><span class="booth-code">O-29</span><span class="rname">Blazpu</span></li>
       <li><span class="booth-code">P-24</span><span class="rname">Deegoo</span></li>
       <li><span class="booth-code">R-06</span><span class="rname">Deb JJ Lee</span></li>
-      <li><span class="booth-code">S-14</span><span class="rname">YUKINNNNNNN</span><span class="rmeta">CSM, FF7 posters</span></li>
       <li><span class="booth-code">S-20</span><span class="rname">Koichame</span></li>
-      <li><span class="booth-code">S-23</span><span class="rname">poxei</span><span class="rmeta">PERSONA, risograph</span></li>
       <li><span class="booth-code">U-13</span><span class="rname">Quirkilicious</span></li>
       <li><span class="booth-code">V-09</span><span class="rname">Tokioeee</span></li>
       <li><span class="booth-code">V-10</span><span class="rname">Yuurina</span></li>
       <li><span class="booth-code">Y-19</span><span class="rname">Yumitang</span></li>
-      <li><span class="booth-code">Z-09</span><span class="rname">carmily</span><span class="rmeta">PERSONA</span></li>
-      <li><span class="booth-code">Z-20</span><span class="rname">goldfishu</span><span class="rmeta">Miku/Teto, DanDaDan</span></li>
     </ul>
 
-    <div class="callout"><b>Note:</b> Jiuge (Z-05) and Sarah MW Miller (O-19) are already covered Friday/above if you got there — skip if checked off. If Friday's sweep ran long, prioritize O-19 and the PERSONA trio (Z-09, S-23, B-20) first in this pass.</div>
-
-    <div class="card"><input type="checkbox" id="s2c"><label for="s2c"><span class="item-name">Sarah Natochenney autograph</span><div class="item-meta">Ash Ketchum — Hall 1C. Three windows today: 10:00am–12:30pm, 1:30–4:00pm, 4:30–7:00pm. First two overlap your panels/print run, so 4:30–7pm is the least rushed option.</div><span class="chip hot">Beat the line</span></label></div>
+    <div class="card"><input type="checkbox" id="s2c"><label for="s2c"><span class="item-name">Sarah Natochenney autograph</span><div class="item-meta">Ash Ketchum — Hall 1C. Windows today: 10:00am–12:30pm, 1:30–4:00pm, 4:30–7:00pm. First two overlap your panels/print run, so 4:30–7pm is the least rushed pick.</div><span class="chip hot">Beat the line</span></label></div>
 
     <div class="card"><input type="checkbox" id="s3"><label for="s3"><span class="item-name">sesamebaozi</span><div class="item-meta">Gaming Hall 1B-224 — separate area, budget extra walk time</div><span class="chip cyan">Gaming Hall</span></label></div>
   </div>
@@ -361,7 +310,6 @@ function showDay(day){
   document.querySelectorAll('.day').forEach(d=>d.classList.remove('active'));
   document.getElementById('day-'+day).classList.add('active');
 }
-// checked-off items get struck through, purely in-memory (no network / storage needed — works fully offline)
 document.querySelectorAll('.card input[type=checkbox]').forEach(cb=>{
   cb.addEventListener('change', ()=>{
     const name = cb.closest('.card').querySelector('.item-name');
